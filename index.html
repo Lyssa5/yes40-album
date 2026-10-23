@@ -1,78 +1,116 @@
 <!doctype html>
 <html lang="zh-Hant-TW"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fbe7cf">
-<meta name="description" content="YES40 永貞時光相簿，珍藏永貞國小第一至三十八屆教職員工與畢業校友的校園記憶。">
-<title>YES40｜永貞時光相簿</title><link rel="icon" href="assets/永貞國小校徽.png"><link rel="stylesheet" href="assets/style.css">
-<script defer src="config.js"></script><script defer src="assets/data.js"></script><script defer src="assets/js/qr-offline.js"></script><script defer src="assets/app.js"></script>
-
-<!-- YES40_FONT_V4_START -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap">
-<style id="YES40_FONT_V4_CSS">
-/* YES40 v4 · 霞鶩文楷 TC x 清晰閱讀字體 | 2026-10-23
-   僅修改字體呈現，不修改照片、輪播、QR Code 或 JavaScript 邏輯。 */
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#fbe7cf" name="theme-color"/>
+<meta content="YES40 永貞時光相簿，珍藏永貞國小第一至三十八屆教職員工與畢業校友的校園記憶。" name="description"/>
+<title>YES40｜永貞時光相簿</title><link href="assets/永貞國小校徽.png" rel="icon"/><link href="assets/style.css" rel="stylesheet"/>
+<script defer="" src="config.js"></script><script defer="" src="assets/data.js"></script><script defer="" src="assets/js/qr-offline.js"></script><script defer="" src="assets/app.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@300;400;700&amp;display=swap" rel="stylesheet"/><style id="yes40-v41-font-patch">
+/* YES40 v4.1: 指定文字專用字體。原站的 assets/style.css 保持不變。
+   霞鶩文楷 TC：Google Fonts；辰宇落雁體 2.0：作者官方公開字體來源。
+   本檔案不包含也不重新散佈任何字型檔。 */
+@font-face {
+  font-family: "YES40 ChenYuLuoYan";
+  src: url("https://raw.githubusercontent.com/Chenyu-otf/chenyuluoyan_thin/main/ChenYuluoyan-2.0-Thin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
 :root {
-  --yes40-title-font: 'LXGW WenKai TC', 'DFKai-SB', 'BiauKai', 'KaiTi', serif;
-  --yes40-reading-font: 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', system-ui, sans-serif;
+  --yes40-wenkai: "LXGW WenKai TC", "LXGW WenKai", "Kaiti TC", "DFKai-SB", serif;
+  --yes40-chenyu: "YES40 ChenYuLuoYan", "LXGW WenKai TC", "DFKai-SB", cursive;
 }
-/* 導覽、操作文字與說明：清晰易讀 */
-html, body, button, input, select, textarea, nav, footer, small, label,
-[role='button'], .top-nav, .toolbar, .actions, .controls,
-.screen-control, .modal-toolbar, .sharebox, .footnote,
-.photo-card p, .detail p, .caption, .description, .hint, .tip,
-[class*='copyright'], [class*='notice'], [class*='disclaimer'],
-[class*='qr-tip'], [class*='toolbar'] {
-  font-family: var(--yes40-reading-font) !important;
-}
-/* 主題標題、相簿名稱、屆次：溫暖的霞鶩文楷 */
-h1, h2, h3, h4,
-#gallery-title, #screen-title, #modal-title,
-.brand h1, .hero h2, .tile h3, .photo-card h3, .screen-meta h2,
-.section-title h2, .screen-head strong,
-[class~='title'], [class~='heading'],
-[class*='-title']:not(button):not(a):not(input):not(select),
-[class*='_title']:not(button):not(a):not(input):not(select),
-[class*='-heading']:not(button):not(a):not(input):not(select),
-[class*='_heading']:not(button):not(a):not(input):not(select) {
-  font-family: var(--yes40-title-font) !important;
-  font-weight: 700;
-  letter-spacing: .035em;
-  line-height: 1.38;
+/* 大標題原為 PNG 圖片；v4.1 改成真正的文字，才可以指定霞鶩文楷。 */
+.hero-inner .hero-title-live {
+  display: block;
+  max-width: 100%;
+  font-family: var(--yes40-wenkai) !important;
+  font-style: normal;
+  font-size: clamp(2.8rem, 8.3vw, 7.25rem);
+  font-weight: 400 !important;
+  line-height: 1.35;
+  color: #874831;
+  letter-spacing: .055em;
+  text-align: center;
   overflow-wrap: anywhere;
 }
-/* 避免年份 / YES40 字樣換成楷體後破壞識別標誌 */
-.mark, .forty, [class*='logo'], [class*='brand-mark'] {
-  font-family: var(--yes40-reading-font) !important;
+.hero-inner .hero-verse-live {
+  display: inline-block;
+  max-width: 100%;
+  font-family: var(--yes40-wenkai) !important;
+  font-size: clamp(1.55rem, 4.25vw, 3.9rem);
+  font-weight: 400 !important;
+  line-height: 1.5;
+  color: #98583d;
+  letter-spacing: .09em;
+  text-align: center;
 }
-/* 小螢幕略收字距，維持原版面 */
-@media (max-width: 700px) {
-  h1, h2, h3, h4, [class~='title'], [class*='-title'] {
-    letter-spacing: .01em;
-  }
+.section-lead h2 {
+  font-family: var(--yes40-wenkai) !important;
+  font-weight: 400 !important;
+  line-height: 1.5;
+  letter-spacing: .055em;
 }
-</style>
-<!-- YES40_FONT_V4_END -->
-
-</head>
+.closing .closing-verse-live {
+  display: block;
+  width: min(100%, 1050px);
+  max-width: 100%;
+  margin-inline: auto;
+  font-family: var(--yes40-wenkai) !important;
+  font-size: clamp(2rem, 5.05vw, 4.65rem);
+  font-weight: 400 !important;
+  line-height: 1.55;
+  letter-spacing: .05em;
+  text-align: center;
+  color: #844a35;
+  overflow-wrap: anywhere;
+}
+/* 兩句校慶標語專用辰宇落雁體，不影響按鈕與一般說明。 */
+.hero-inner .hero-sub,
+.hero-inner .hero-desc {
+  font-family: var(--yes40-chenyu) !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  letter-spacing: .025em;
+  line-height: 1.8;
+}
+.hero-inner .hero-sub { font-size: clamp(1.65rem, 2.85vw, 2.5rem); }
+.hero-inner .hero-desc { font-size: clamp(1.35rem, 2vw, 1.8rem); }
+/* 網站頁尾：僅標題與使用聲明採用霞鶩文楷。 */
+.sitefooter strong,
+.sitefooter p {
+  font-family: var(--yes40-wenkai) !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: 1.95;
+}
+.sitefooter strong { font-size: clamp(1.05rem, 1.5vw, 1.4rem); }
+.sitefooter p { font-size: clamp(.92rem, 1.1vw, 1.05rem); }
+@media (max-width: 650px) {
+  .hero-inner .hero-title-live { font-size: clamp(2.4rem, 10vw, 4.8rem); letter-spacing: .015em; }
+  .hero-inner .hero-verse-live { font-size: clamp(1.45rem, 5.2vw, 2.5rem); letter-spacing: .01em; }
+  .closing .closing-verse-live { font-size: clamp(1.7rem, 5.6vw, 2.75rem); letter-spacing: .015em; }
+  .hero-inner .hero-sub { font-size: clamp(1.45rem, 4.5vw, 1.85rem); }
+  .hero-inner .hero-desc { font-size: clamp(1.2rem, 3.9vw, 1.55rem); }
+}
+</style></head>
 <body data-page="home">
-<div class="paper-grain" aria-hidden="true"></div>
+<div aria-hidden="true" class="paper-grain"></div>
 <header class="masthead">
-  <div class="topline"><a class="schoolbrand" href="index.html" aria-label="返回永貞時光相簿首頁"><img src="assets/永貞國小校徽.png" alt="永貞國小校徽"><span>苗栗縣頭份市<br><b>永貞國民小學</b></span></a><div class="topactions"><img class="yes-logo" src="assets/YES40紀念字樣.svg" alt="YES40 校慶紀念字樣"></div></div>
-  <div class="hero-inner"><span class="mini-label">YONGZHEN ELEMENTARY SCHOOL · 40TH ANNIVERSARY</span><div class="ornament" aria-hidden="true">✦　✿　✦</div><h1><span class="headline-prefix">YES40</span><img class="hero-title-art" src="assets/手寫_永貞時光相簿.png" alt="永貞時光相簿"></h1><p class="hero-verse"><img src="assets/手寫_時光留影貞藏永遠.png" alt="時光留影，貞藏永遠。"></p><p class="hero-sub">「永」往直前，「貞」心40</p><p class="hero-desc">一張照片，一段青春；四十年光陰，讓我們再一起翻開熟悉的回憶。</p><div class="hero-actions"><a href="#albums" class="primarybtn">走進時光相簿 <span aria-hidden="true">↘</span></a><button id="slideStartTop" class="ghostbtn" type="button">▶ 校慶大螢幕播放</button></div></div>
-  <div class="hero-flower flower-left" aria-hidden="true">✿</div><div class="hero-flower flower-right" aria-hidden="true">✳</div>
+<div class="topline"><a aria-label="返回永貞時光相簿首頁" class="schoolbrand" href="index.html"><img alt="永貞國小校徽" src="assets/永貞國小校徽.png"/><span>苗栗縣頭份市<br/><b>永貞國民小學</b></span></a><div class="topactions"><img alt="YES40 校慶紀念字樣" class="yes-logo" src="assets/YES40紀念字樣.svg"/></div></div>
+<div class="hero-inner"><span class="mini-label">YONGZHEN ELEMENTARY SCHOOL · 40TH ANNIVERSARY</span><div aria-hidden="true" class="ornament">✦　✿　✦</div><h1><span class="headline-prefix">YES40</span><span class="hero-title-live">永貞時光相簿</span></h1><p class="hero-verse"><span class="hero-verse-live">時光留影，貞藏永遠。</span></p><p class="hero-sub">「永」往直前，「貞」心40</p><p class="hero-desc">一張照片，一段青春；四十年光陰，讓我們再一起翻開熟悉的回憶。</p><div class="hero-actions"><a class="primarybtn" href="#albums">走進時光相簿 <span aria-hidden="true">↘</span></a><button class="ghostbtn" id="slideStartTop" type="button">▶ 校慶大螢幕播放</button></div></div>
+<div aria-hidden="true" class="hero-flower flower-left">✿</div><div aria-hidden="true" class="hero-flower flower-right">✳</div>
 </header>
 <main class="shell" id="albums">
-  <div class="section-lead"><span class="caption-en">THE MEMORY GALLERY</span><h2>把時光，慢慢翻回來</h2><p>請選擇照片專區或畢業屆次，找到當年那個熟悉的身影。</p></div>
-  <section class="collection-control" aria-label="相簿搜尋與篩選"><div class="zone-tabs" role="group" aria-label="照片專區"><button type="button" class="zone-tab active" data-zone="all">全部珍藏</button><button type="button" class="zone-tab" data-zone="staff">歷屆教職員工</button><button type="button" class="zone-tab" data-zone="graduate">歷屆畢業校友</button></div>
-   <div class="filter-tools"><label class="searchbar"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="搜尋屆次、班級或關鍵字" aria-label="搜尋屆次、班級或關鍵字"><kbd>搜尋</kbd></label><button id="resetBtn" class="resetbtn" type="button">清除篩選 ↻</button></div>
-   <div class="cohort-heading"><strong>依屆次尋找</strong><span>第 1 屆－第 38 屆</span></div><div id="cohortFilter" class="cohort-scroller" role="group" aria-label="依屆次篩選"></div>
-  </section>
-  <div id="qrAlert" class="qr-alert" role="status"></div>
-  <div class="gallery-meta"><div id="resultLabel"></div><button id="slideStartGallery" class="slide-entry" type="button">▣　以目前篩選結果輪播</button></div>
-  <div id="galleryRoot" aria-live="polite"></div>
-  <div class="closing"><div class="closing-scribble" aria-hidden="true">✿　⋆　✼</div><img class="closing-verse" src="assets/手寫_翻開舊時光遇見永貞的我們.png" alt="翻開舊時光，遇見永貞的我們。"><p>讓一張張熟悉的笑容，陪我們重溫四十年的美好。</p></div>
+<div class="section-lead"><span class="caption-en">THE MEMORY GALLERY</span><h2>把時光，慢慢翻回來</h2><p>請選擇照片專區或畢業屆次，找到當年那個熟悉的身影。</p></div>
+<section aria-label="相簿搜尋與篩選" class="collection-control"><div aria-label="照片專區" class="zone-tabs" role="group"><button class="zone-tab active" data-zone="all" type="button">全部珍藏</button><button class="zone-tab" data-zone="staff" type="button">歷屆教職員工</button><button class="zone-tab" data-zone="graduate" type="button">歷屆畢業校友</button></div>
+<div class="filter-tools"><label class="searchbar"><span aria-hidden="true">⌕</span><input aria-label="搜尋屆次、班級或關鍵字" id="searchInput" placeholder="搜尋屆次、班級或關鍵字" type="search"/><kbd>搜尋</kbd></label><button class="resetbtn" id="resetBtn" type="button">清除篩選 ↻</button></div>
+<div class="cohort-heading"><strong>依屆次尋找</strong><span>第 1 屆－第 38 屆</span></div><div aria-label="依屆次篩選" class="cohort-scroller" id="cohortFilter" role="group"></div>
+</section>
+<div class="qr-alert" id="qrAlert" role="status"></div>
+<div class="gallery-meta"><div id="resultLabel"></div><button class="slide-entry" id="slideStartGallery" type="button">▣　以目前篩選結果輪播</button></div>
+<div aria-live="polite" id="galleryRoot"></div>
+<div class="closing"><div aria-hidden="true" class="closing-scribble">✿　⋆　✼</div><p class="closing-verse closing-verse-live">翻開舊時光，遇見永貞的我們。</p><p>讓一張張熟悉的笑容，陪我們重溫四十年的美好。</p></div>
 </main>
-<footer class="sitefooter"><img src="assets/永貞國小校徽.png" alt="永貞國小校徽"><div><strong>YES40 · 永貞時光相簿</strong><p>本相簿蒐整歷屆影像，供校史典藏、校友追憶及非營利紀念交流使用。影像涉及肖像權、個人資料或著作權事項，如需補充來源、反映、更正或申請下架，請洽永貞國民小學（037-623290）；校方接獲反映後將依實際情況查核處理。本網站不表示已取得所有影像當事人之授權。</p></div><span class="footer-40">YES 40</span></footer>
+<footer class="sitefooter"><img alt="永貞國小校徽" src="assets/永貞國小校徽.png"/><div><strong>YES40 · 永貞時光相簿</strong><p>本相簿蒐整歷屆影像，供校史典藏、校友追憶及非營利紀念交流使用。影像涉及肖像權、個人資料或著作權事項，如需補充來源、反映、更正或申請下架，請洽永貞國民小學（037-623290）；校方接獲反映後將依實際情況查核處理。本網站不表示已取得所有影像當事人之授權。</p></div><span class="footer-40">YES 40</span></footer>
 <div id="modalRoot"></div>
 </body></html>
